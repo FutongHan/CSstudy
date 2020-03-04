@@ -1,0 +1,89 @@
+1. 检索：
+SELECT * FROM xxxx
+
+去重
+SELECT *  DISTINCT FROM xxxx
+
+选择前几行：
+SELECT * FROM xxxxx
+LIMIT 5
+
+选择第5行起的第5个数据
+SELECT * FROM xxxxx
+LIMIT 5 OFFSET 5
+
+2. 排序检索(以字母顺序a-z排序)
+SELECT * FROM xxxxx
+ORDER BY *
+
+按照列位置排序：先按照第二列排序，再按照第3列排序
+SELECT * FROM xxxxx
+ORDER BY 2，3
+
+降序：
+SELECT * FROM xxxxx
+ORDER BY * DESC
+
+3. 过滤数据
+SELECT *  DISTINCT FROM xxxx
+WHERE *= k
+
+不匹配检查：
+WHERE *<> 'k'
+
+范围值检查：
+WHERE * BETWEEN 5 AND 10
+
+空值检查：
+WHERE * IS NULL
+
+操作符：AND  OR  IN  NOT
+优先级：and>or，所以部分需要括号
+
+4. 操作符过滤
+
+LIKE
+
+SELECT * FROM xxxxx
+找出以fish开头的(类似正则)：WHERE * LIKE 'fish%'
+找出包含bag的(类似正则): WHERE * LIKE '%bag%'
+
+5.数据分析
+
+平均数：
+SELECT AVG(*) AS k FROM xxxxx
+会输出k
+
+创建分组 Groupby
+SELECT *,COUNT() AS k FROM xxxxx
+GROUP BY *
+
+6. 表联结
+
+创建联结
+SELECT a,b,c FROM x,y
+WHERE x.1 = y.1
+
+叉联结：笛卡尔积
+
+left join返回左表中的所有记录和右表中联结字段相等的记录
+right join返回右表中的所有记录和左表中联结字段相等的记录
+inner join只返回两个表中联结字段相等的行
+
+select * from A
+innerjoin B
+ON  A.xxx = B.xxx
+
+7. 数据更新
+
+插入完整的行
+INSERT INTO xxx
+VALUES()
+
+更新
+UPDATE  *	SET a=‘ ’		WHERE b=' '
+
+删除
+DELETE FROM xxxx WHERE a = ' '
+
+8. CREATE TABLE a  ( )
